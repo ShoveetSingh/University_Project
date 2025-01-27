@@ -45,6 +45,15 @@ def filter(cluster):
 data["Cluster"]=data["Private"].apply(filter)
 print(data["Cluster"])
 
+# df=[]
+# for i in data["Private"]:
+#     if i=="Yes":
+#         df.append(1)
+#     else:
+#         df.append(0)
+
+# data["Cluster"]=df
+
 f,(ax1,ax2)=plt.subplots(2,1, sharey=True,figsize=(10,6))
 ax1.scatter(data["Accept"],data["Enroll"],c=predict,cmap='rainbow')
 ax2.scatter(data["Accept"],data["Enroll"],c=data["Cluster"],cmap='rainbow')
